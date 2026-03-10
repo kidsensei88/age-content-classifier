@@ -1,3 +1,5 @@
+from youtube_extractor import get_transcript
+
 
 def classify_content(text):
 
@@ -28,8 +30,11 @@ def classify_content(text):
     else:
         return "7+"
 
-text = input("Enter video transcript: ")
 
-result = classify_content(text)
+url = input("Enter YouTube link: ")
+
+transcript = get_transcript(url)
+
+result = classify_content(transcript)
 
 print("Suggested age rating:", result)
